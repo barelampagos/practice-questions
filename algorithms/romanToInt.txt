@@ -1,0 +1,102 @@
+
+"CMXCIX" = 999
+"XLIX" = 49
+
+CM = 900 
+XC = 90
+IX = 9
+
+59
+50 = L
+9 = IX
+
+IV = 5
+IX = 9
+
+XC = 90
+XL = 50
+
+CD = 400
+CM = 900
+
+III
+I = 1, sum+1
+I = 1, sum+1
+I = 1, sum+1
+
+sum=3
+-----
+
+IV
+I = 1, sum+1
+V = 5
+
+III = sum 
+IV = sub
+IX = sub
+
+
+XLIX = 49
+40 9 = 49
+
+623 = DC XX III
+
+Input: s = "M CM XC IV"
+1000 M
+C = 100, M = 1000
+1000 + 900 = 1900
+
+
+Output: 1994
+
+S.match([])
+
+M: 1000
+
+C: 100 -- 
+M: 1000
+
+X: 10 -- 
+C: 100
+
+I: 1
+V: 5
+
+
+class Solution {
+    public int romanToInt(String s) {
+        // Map: K, V
+        // 'I', 1
+        // 'V', 5...
+        
+        int value = 0;
+        
+        // Break String into chars
+        // Iterate, maintain sum of the current value
+        for (int i = 0; i < s.length; i++) {
+        
+        	char next = i+1; // check if at end of str???
+          char curr = ...;
+					
+          // look forward at each char
+          	// if same char, add to sum
+            // if different and greater, subtract from sum
+            	// 
+          // Cases for subtraction
+            // I
+            // X
+            // C
+        
+        }
+        
+
+        return value;
+        
+    }
+}
+
+
+
+
+
+
