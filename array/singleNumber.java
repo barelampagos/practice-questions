@@ -18,33 +18,17 @@ Output: 1
 */
 
 class Solution {
-    public int singleNumber(int[] nums) {
-        HashMap<Integer, Integer> countMap = new HashMap<>();
-        int result = 0;
+    public int[] singleNumber(int[] nums) {
+        HashSet<Integer> existingNums = new HashSet<>();
         
         for (int num : nums) {
-            if (countMap.containsKey(num)) {
-                int count = countMap.get(num);
-                count++;
-                countMap.put(num, count);
-                
-                System.out.println(num + ": " + count);
+            if (existingNums.contains(num)) {
+                existingNums.remove(num);
             } else {
-                countMap.put(num, 1);
-                System.out.println(num + ": " + 1);
-            }
-        }
-
-        System.out.println(countMap.toString());
-
-        
-        for (Integer key : countMap.keySet()) {
-            System.out.println(key);
-            if (countMap.get(key) == 1) {
-                result = key;
+                existingNums.add(num);
             }
         }
         
-        return result;
+        return existingNums.stream().mapToInt(i -> i).toArray();
     }
 }
