@@ -55,4 +55,21 @@ class Solution {
         
         return missingNums;
     }
+
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        boolean[] numCounter = new boolean[nums.length];
+        List<Integer> results = new ArrayList<>();
+        
+        for (int num : nums) {
+            numCounter[num - 1] = true;
+        }
+        
+        for (int i = 0; i < numCounter.length; i++) {
+            if (!numCounter[i]) {
+                results.add(i + 1);
+            }
+        }
+        
+        return results;
+    }
 }
