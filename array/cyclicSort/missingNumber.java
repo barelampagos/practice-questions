@@ -27,4 +27,35 @@ class Solution {
         
         return result;
     }
+
+    public int missingNumberCyclicSort(int[] nums) {
+        sort(nums);
+        int result = nums.length;
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i) {
+                result = i;
+            }
+        }
+        
+        return result;
+    }
+    
+    // Cyclic sort
+    public static void sort(int[] nums) {
+        int i = 0;
+        while (i < nums.length) {
+          int j = nums[i];
+          if (nums[i] < nums.length && nums[i] != nums[j])
+            swap(nums, i, j);
+          else
+            i++;
+        }
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
 }
